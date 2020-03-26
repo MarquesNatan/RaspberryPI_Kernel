@@ -8,4 +8,4 @@ null::sysinit:/bin/mount -t sysfs sysfs /sys
 # Put a getty on the serial port
 #::respawn:/sbin/getty -L ttyS1 115200 v100
 
-::respawn:/sbin/getty -L ttyS1 115200 vt100
+::respawn:/sbin/getty -n -l /bin/sh -L ttyS1 115200 vt100
