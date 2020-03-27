@@ -33,6 +33,7 @@ Directorys rootfs:
 Configure on first boot on target:
 > setenv load_kernel 'fatload mmc 0:1 ${kernel_addr_r} zImage'
 > setenv load_dtb 'fatload mmc 0:1 ${fdt_addr_r} bcm2837-rpi-3-b.dtb'
+> setenv bootcmd 'run load_kernel; run load_dtb; bootz ${kernel_addr_r} - ${fdt_addr_r}'
 > setenv bootargs '${consolecfg} root=/dev/mmcblk0p2 rootfstype=ext4 rootwait rw'
 > saveenv
 > boot
